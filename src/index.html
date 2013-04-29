@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple colored frames benchmark</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="./js/fpsmeter.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </head>
+  <body>
+    <article>
+    <header>
+    <h1>Simple colored frames benchmark</h1>
+    <ul>
+        <li>Test duration: 5 seconds</li>
+        <li>Target framerate: 20 fps (frames per seconds)</li>
+        <li>Viewport size: 720x1280</li>
+    </ul>
+    </header>
+    <div id="container">
+    </div>
+    <p id="results">
+    </p>
+    </article>
+    <aside>
+        <div id="fps"></div>
+    </aside>
+    <script>
+        if(!window.FPSMeter){
+            document.getElementById("results").innerHTML = "Your browser doesn't seem to be compatible with this test."; 
+        }else{
+            document.addEventListener("fps",
+                function(evt) {
+                    document.getElementById("fps").innerHTML = evt.fps + " fps";
+                    fps.push(evt.fps);
+                },
+                false);
+            FPSMeter.run(0.5);
+            //var meter = new FPSMeter(document.getElementById('fps', {graph:1}));
+            //meter.showDuration();
+
+            coloredFramesTest(1);
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+  body {
+        background: #fff;
+        font-family: 'Open Sans', sans-serif;
+    }
+    article {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    article > header > h1 {
+        text-align: center;
+    }
+    article > p {
+        text-align: center;
+    }
+    #container {
+        width: 1280px;
+	height: 720px;
+	overflow: hidden;
+        position: relative;
+        border: 1px solid red;
+    }
+    aside {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin: 0px;
+    }
+    #fps {
+        font-size: 1.5em;
+        background-color: black;
+        color: white;
+    }
+    .movingDiv {
+        position: absolute;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        width: 800px;
+        height: 600px;
+    }
+
