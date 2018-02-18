@@ -3,6 +3,9 @@
 </head>
 <body>
 <script>
+ function getFriendList() {
+     FB.api('/me/friendlists')
+ }
   window.fbAsyncInit = function() {
     FB.init({
       appId            : '259815530772742',
@@ -11,15 +14,16 @@
       version          : 'v2.12'
     });
     
-    
-      FB.api('/659791586/friendlists')
+     
       FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
           console.log('Logged in.');
+          getFriendList()
         }
         else {
           FB.login(function(response) {
               // handle the response
+            getFriendList()
           }, {
               scope: 'user_friends,email', 
               return_scopes: true
