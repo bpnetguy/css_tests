@@ -19,6 +19,12 @@
         }
         else {
           FB.login();
+          FB.login(function(response) {
+              // handle the response
+          }, {
+              scope: 'user_friends,email', 
+              return_scopes: true
+          });
         }
       });
   };
